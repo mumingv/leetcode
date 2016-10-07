@@ -19,4 +19,4 @@ function word_count {
     done
 }
 
-word_count | sort -k 2 -r
+word_count | sort -k 2 -nr

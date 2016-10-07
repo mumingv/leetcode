@@ -8,4 +8,4 @@ awk '{ count[$0]++ } END {
     for (ind in count) {
         printf("%s %d\n", ind, count[ind]);
     }
-}' | sort -k 2 -r
+}' | sort -k 2 -nr
