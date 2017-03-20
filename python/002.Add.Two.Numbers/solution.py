@@ -11,6 +11,26 @@ class ListNode(object):
         self.val = x
         self.next = None
 
+def createLinkedList(list):
+    root = cur = None
+    for i in list:
+        if root == None:
+            root = cur = ListNode(i)
+        else:
+            cur.next = ListNode(i)
+            cur = cur.next
+    return root
+
+def printLinkedList(list):
+    txt = ''
+    while list:
+        if txt == '':
+            txt = (str)(list.val)
+        else:
+            txt = txt + ' -> ' + (str)(list.val)
+        list = list.next
+    print txt
+
 class Solution(object):
     def addTwoNumbers(self, l1, l2):
         """
@@ -34,7 +54,10 @@ class Solution(object):
         return root.next
 
 list1 = [2,4,3]
-list2 = [5,6,4]        
+list2 = [5,6,4]
+linkedList1 = createLinkedList(list1)
+linkedList2 = createLinkedList(list2)
 obj = Solution()
-obj.addTwoNumbers(list1, list2)
- 
+linkedListResult = obj.addTwoNumbers(linkedList1, linkedList2)
+printLinkedList(linkedListResult)
+
